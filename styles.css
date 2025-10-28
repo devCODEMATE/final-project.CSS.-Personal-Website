@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --base-color: #ffffff;
+    --text-color: #000000;
+    --primary-color: #ffc063;
+    --secondary-color: #8d8dff;
+    --color-1: #a5e6db;
+    --color-2: #7da0b1;
+    --color-3: #66517c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Merriweather, Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--text-color);
+}
+
+body {
+    padding: 1em;
+    background-color: var(--base-color);
+}
+
+h1, h2, h3 {
+    font-family: Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav {
+    margin: 1em auto 3em auto;
+    width: min(1000px, 100%);
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    gap: 2em;
+}
+
+nav li:first-child {
+    margin-right: auto;
+    font-family: Merriweather, Poppins;
+    font-weight: bold;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+header {
+    margin: 2em auto;
+    width: min(75em, 100%);
+    background-color: var(--color-1);
+    padding: min(2em, 15%);
+    border-radius: 1em;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3em;
+}
+
+header img {
+    max-width: 100%;
+    border-radius: 1em;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+.text-container {
+    flex: 0 1 34em;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+.text-container p {
+    margin: 0.75em 0 1em 0;
+    font-size: 1.25rem;
+}
+
+/* CORREGIDO: era cta-botton, ahora es cta-button */
+.cta-button {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: var(--primary-color);
+    padding: 0.75em 1.25em;
+    border-radius: 0.5em; /* CORREGIDO: era .5e, */
+    font-weight: 600;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button.secondary {
+    background-color: var(--secondary-color);
+}
+
+section {
+    margin: 2em auto;
+    padding: 3em min(2em, 15%);
+    width: min(75em, 100%);
+    background-color: var(--color-2);
+    border-radius: 1em;
+}
+
+/* AÑADIDO: Para alternar colores de fondo */
+section.alternate-section {
+    background-color: var(--color-1);
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1em;
+}
+
+section p {
+    margin-top: 1em;
+    font-size: 1.25rem;
+}
+
+section img {
+    max-width: 100%;
+    border-radius: 1em;
+}
+
+.grid-container {
+    margin-top: 3em;
+    margin-bottom: 3em;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "img-1 img-1 img-2 img-3"
+        "img-1 img-1 img-4 img-5";
+    gap: 1em;
+}
+
+.grid-container img {
+    height: 100%;
+    width: 100%;
+    border-radius: 0.5em;
+    object-fit: cover;
+    transition: transform 0.2s ease;
+}
+
+.grid-container img:hover {
+    transform: scale(1.05);
+}
+
+details {
+    margin-top: 1em;
+    background-color: var(--base-color);
+    border-radius: 1em;
+    text-align: left;
+}
+
+details summary {
+    padding: 1em;
+    font-size: 1.5rem;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+details summary:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+details p {
+    padding: 0 2em 2em 2em;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+footer {
+    padding: 2em 0 1.5em 0;
+    text-align: center;
+}
+
+footer a {
+    margin: 0 1em;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 988px) {
+    header {
+        text-align: center;
+    }
+    
+    header .text-container {
+        padding-top: 0;
+    }
+    
+    section {
+        text-align: center;
+    }
+}
+
+@media (max-width: 640px) {
+    nav li {
+        display: none;
+    }
+
+    nav li:first-child,
+    nav li:last-child {
+        display: block;
+    }
+
+    header {
+        margin-top: 0; /* CORREGIDO: era margin=top */
+    }
+
+    .cta-button {
+        margin-top: 0.5em;
+        width: 100%;
+    }
+
+    .grid-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .text-container p {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    details summary {
+        font-size: 1.2rem;
+    }
+}
